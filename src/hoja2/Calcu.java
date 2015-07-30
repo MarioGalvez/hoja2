@@ -26,55 +26,56 @@ public class Calcu implements Calculadora{
     public void setString(String linea) {
         cadena = linea;
         System.out.println(cadena);
-        cadena2 = cadena.split(" ");
     }
 
     
     public void meterVector() {
-        
+        calcularVector();
     }
 
     
     public boolean calcularVector() {
         for(String numero: cadena2){
-                esnumero=true;
+            boolean esnumero=true;
             try
             {
                 Integer.parseInt(numero);
             }catch(NumberFormatException e){
                 esnumero=false;
             }
-        }
-        
-        return esnumero;
-    }
-
-    
-    public int getResultado() {
-        for(String numero: cadena2){
-    
+            if(esnumero){
+                Vector.push(Integer.parseInt(numero));
+            }else{
                 if(numero.equals("+")){
                     Vector.push(Sumar(Vector.pop(),Vector.pop())); 
                     System.out.println(resultado);
-                    return resultado;
+                    resultado=0;
                 }if(numero.equals("*")){
                     Vector.push(Multiplicar(Vector.pop(),Vector.pop())); 
                     System.out.println(resultado);
-                    return resultado;
+                    resultado=0;
                     
                 }if(numero.equals("-")){
                     Vector.push(Restar(Vector.pop(),Vector.pop())); 
                     System.out.println(resultado);
-                    return resultado;
+                    resultado=0;
                     
                 }if(numero.equals("/")){
                     Vector.push(Dividir(Vector.pop(),Vector.pop())); 
                     System.out.println(resultado);
-                    return resultado;
+                    resultado=0;
                     
                 }  
             }
+        }
+        return esnumero;
+     }
+    
+
+    
+    public int getResultado() {
         
+        return resultado;
         }
     
     public int Sumar(int num1, int num2){

@@ -25,7 +25,7 @@ public class Hoja2 {
     }
     public static void LeerArchivo() throws FileNotFoundException, IOException{   
         //Aqui se coloca la direccion del Archivo completa 
-        BufferedReader bf = new BufferedReader(new FileReader("C:\\Users\\Mario Fernando\\Documents\\tabajos uvg\\7mo semestre\\progra\\calculadora\\src\\calculadora\\prueba.txt"));
+        BufferedReader bf = new BufferedReader(new FileReader("C:\\Users\\Mario Fernando\\Desktop\\123.txt"));
         cadena=bf.readLine();         
       }
     
