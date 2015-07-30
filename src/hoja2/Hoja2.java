@@ -23,10 +23,14 @@ public class Hoja2 {
         LeerArchivo();
         cal.setString(cadena);
         cal.meterVector();
-        cal.calcularVector();
+        if(cal.calcularVector() == true){
+        
         resultado = cal.getResultado();
         System.out.println(resultado);
-        
+        }
+        else{
+            System.out.println("ERROR");
+        }
         
     }
     public static void LeerArchivo() throws FileNotFoundException, IOException{   

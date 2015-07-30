@@ -16,11 +16,13 @@ public class Calcu implements Calculadora{
     private String cadena;
     private boolean esnumero;
     private String cadena2[];
+    private boolean bandera;
     
     public Calcu(){
        resultado=0;
        cadena="";
        Vector = new StackArrayVector<Integer>(); 
+       bandera = true;
     }
     
     public void setString(String linea) {
@@ -45,9 +47,17 @@ public class Calcu implements Calculadora{
                 esnumero=false;
             }
             if(esnumero){
+
                 Vector.push(Integer.parseInt(numero));
-            }else{
-                if(numero.equals("+")){
+
+            }    
+            else{
+                if(Vector.size()== 0 || Vector.size()>=4 ){
+                    bandera = false;
+                }
+
+                else{
+                    if(numero.equals("+")){
                     Vector.push(Sumar(Vector.pop(),Vector.pop())); 
                     
                     
@@ -64,11 +74,11 @@ public class Calcu implements Calculadora{
                 }if(numero.equals("/")){
                     Vector.push(Dividir(Vector.pop(),Vector.pop())); 
                                     
-                    
+                }   
                 }  
             }
         }
-        return esnumero;
+        return bandera;
      }
     
 
