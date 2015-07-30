@@ -52,7 +52,7 @@ public class Calcu implements Calculadora{
 
             }    
             else{
-                if(Vector.size()== 0 || Vector.size()>=4 ){
+                if( Vector.size()<= 1 || Vector.size()>= 4){
                     bandera = false;
                 }
 
