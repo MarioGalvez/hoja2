@@ -14,14 +14,16 @@ import java.io.IOException;
  */
 public class Hoja2 {
 
-    private String cadena;
+     static String cadena;
     
     public static void main(String[] args) {
        
-        
+        Calcu cal = new Calcu();
+        LeerArchivo();
+        cal.setString(cadena);
         
     }
-    public void LeerArchivo() throws FileNotFoundException, IOException{   
+    public static void LeerArchivo() throws FileNotFoundException, IOException{   
         //Aqui se coloca la direccion del Archivo completa 
         BufferedReader bf = new BufferedReader(new FileReader("C:\\Users\\Mario Fernando\\Documents\\tabajos uvg\\7mo semestre\\progra\\calculadora\\src\\calculadora\\prueba.txt"));
         cadena=bf.readLine();         
