@@ -25,6 +25,7 @@ public class Calcu implements Calculadora{
     
     public void setString(String linea) {
         cadena = linea;
+        cadena2 =cadena.split(" ");
         System.out.println(cadena);
     }
 
@@ -48,22 +49,21 @@ public class Calcu implements Calculadora{
             }else{
                 if(numero.equals("+")){
                     Vector.push(Sumar(Vector.pop(),Vector.pop())); 
-                    System.out.println(resultado);
-                    resultado=0;
+                    
+                    
                 }if(numero.equals("*")){
                     Vector.push(Multiplicar(Vector.pop(),Vector.pop())); 
-                    System.out.println(resultado);
-                    resultado=0;
+                    
+                    
                     
                 }if(numero.equals("-")){
                     Vector.push(Restar(Vector.pop(),Vector.pop())); 
-                    System.out.println(resultado);
-                    resultado=0;
+                   
+                    
                     
                 }if(numero.equals("/")){
                     Vector.push(Dividir(Vector.pop(),Vector.pop())); 
-                    System.out.println(resultado);
-                    resultado=0;
+                                    
                     
                 }  
             }
